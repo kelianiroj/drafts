@@ -1,0 +1,24 @@
+// this program prints the Fibonacci series, starting from 1 and by couples of numbers.
+// the cycle lets you continue the series, beyond the couples it has already printed.
+// kelianirojas
+
+#include <stdio.h>
+#include <stdlib.h>
+
+main()
+{
+      int i, j, x, uno, dos;
+      uno = 0;
+      dos = 1;
+      do{
+         printf("\n print the Fibonacci series in couples of: ");
+         scanf("%d", &x);
+         for(i = 0; i < x; i++){
+            uno += dos;
+            dos += uno;
+            printf(" %d,", uno);
+            printf(" %d,", dos);
+            }
+      }while(x!=0);
+            system("pause>nul");
+            }
