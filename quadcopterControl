@@ -1,0 +1,48 @@
+// author: keliani.
+// testing: quadcopter controls.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+//control de movimiento de quadcopter versión 1.0
+//ejecuta 1 SOLA ACCIÓN por comando
+
+main(){
+       int vertposition, horzposition; //posiciones (plano x,y) iniciales
+       vertposition = 0; horzposition = 0;
+       char command; //comandos de movimiento
+       printf("quadcopter is in initial position (x,y) = (0,0) m");
+       printf("\n options: ");
+       printf("\n u = UP / d = DOWN \n i = INITIAL / m = MAXIMUM \n r = RIGHT / l = LEFT");
+       printf("\n quadcopter next movement? ");
+       do{
+                  scanf("%c", &command);
+                  switch(command){
+                                  case 'u': vertposition = vertposition+1;
+                                  printf("\n quadcopter position: y = %d m", vertposition);
+                                  printf("\n quadcopter next movement? ");break;
+                                  case 'd': vertposition = vertposition -1;
+                                  printf("\n quadcopter position: y= %d m", vertposition);
+                                  printf("\n quadcopter next movement? ");break;
+                                  case 'i': vertposition = 0;
+                                  printf("\n quadcopter position (x,y) = (0,0) m");
+                                  printf("\n quadcopter next movement? ");break;
+                                  case 'm': vertposition = 3;
+                                  printf("\n quadcopter maximum position y = 3.00 m");
+                                  printf("\n quadcopter next movement? ");break;
+                                  case 'r': horzposition = horzposition+1;
+                                  printf("\n quadcopter position: x = %d m right", horzposition);
+                                  printf("\n quadcopter next movement? ");break;
+                                  case 'l': horzposition = horzposition-1;
+                                  printf("\n quadcopter position: x = %d m left", horzposition);
+                                  printf("\n quadcopter next movement? ");break;
+                                  default:;
+                                  }
+                  if(vertposition==4)
+                  printf("\n this is beyond the top upward position");
+                  if(vertposition<0)
+                  printf("\n this is beyond the top downward position");
+
+       }while(command!='x');
+       system("PAUSE>nul");
+}
